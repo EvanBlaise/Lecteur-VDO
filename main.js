@@ -40,6 +40,7 @@ function draw(){
   context.fillRect(0, 510, 2000, 30)
   requestAnimationFrame(draw)
 }
+
 video.addEventListener("timeupdate", function()
 {
   var time = video.currentTime / 60
@@ -49,8 +50,6 @@ video.addEventListener("timeupdate", function()
   document.getElementById("current").innerHTML = myTime
   document.getElementById("duration").innerHTML = myEndTime 
 })
-
-
 
 canvas.onmousemove = function(e)
 {
@@ -63,4 +62,3 @@ canvas.onmousemove = function(e)
     canvas.style.cursor = "default"
   }
 }
-
