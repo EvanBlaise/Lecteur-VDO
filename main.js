@@ -42,8 +42,12 @@ function draw(){
 }
 video.addEventListener("timeupdate", function()
 {
-  var time = Math.floor(video.currentTime)
-  console.log(time) 
+  var time = video.currentTime / 60
+  var endTime = video.duration / 60
+  var myTime = time.toFixed(2)
+  var myEndTime = endTime.toFixed(2)
+  document.getElementById("current").innerHTML = myTime
+  document.getElementById("duration").innerHTML = myEndTime 
 })
 
 
