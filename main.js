@@ -4,6 +4,7 @@ var video = document.createElement("video")
 video.src = "src/video.mp4"
 var pauseb = document.getElementById("pause")
 var playb = document.getElementById("play")
+var progress = document.getElementById("progress")
 
 video.width = 960
 video.height = 540
@@ -37,7 +38,7 @@ function draw(){
   context.clearRect(0, 0, canvas.width, canvas.height)
   context.drawImage(video, 0, 0, 960, 540)
   context.fillStyle = "#f00"
-  context.fillRect(0, 510, 2000, 30)
+  context.fillRect(0, 510, 960, 30)
   requestAnimationFrame(draw)
 }
 
@@ -62,3 +63,12 @@ canvas.onmousemove = function(e)
     canvas.style.cursor = "default"
   }
 }
+
+function progressLoop() {
+  setInterval(function () {
+    document.getElementById("progress").value = (video.currentTime / video.duration) * 960;
+    
+  });
+}
+progressLoop()
+

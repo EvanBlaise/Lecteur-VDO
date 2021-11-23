@@ -2,3 +2,6 @@ canvas
 {
     border: 2px solid blue;
 }
+progress{
+    border: 1px;
+}
